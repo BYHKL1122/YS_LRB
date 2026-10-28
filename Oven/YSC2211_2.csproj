@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57051C84-EF88-4190-B2EF-121D02F72EE2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YS_6000</RootNamespace>
+    <AssemblyName>YSC1935_2</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>YS_6000.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommLink, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CommLink.dll</HintPath>
+    </Reference>
+    <Reference Include="DataBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Release\Interop.ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADOX, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Release\Interop.ADOX.dll</HintPath>
+    </Reference>
+    <Reference Include="MotionLink, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\MotionLink.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.2.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=245eacd6b5d2d338, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\OxyPlot.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TimePlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\TimePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="UserControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\UserControls.dll</HintPath>
+    </Reference>
+    <Reference Include="VisionLink, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\VisionLink.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\AIO.cs" />
+    <Compile Include="Module\Chamber.cs" />
+    <Compile Include="Module\MagazineOutput.cs" />
+    <Compile Include="Module\ModbusRTU_new.cs" />
+    <Compile Include="Module\Oven.cs" />
+    <Compile Include="Module\OvenInput.cs" />
+    <Compile Include="Module\OvenInputTrack.cs" />
+    <Compile Include="Module\OvenOutput.cs" />
+    <Compile Include="Module\OvenOutputTrack.cs" />
+    <Compile Include="Module\OxygenMeter.cs" />
+    <Compile Include="Module\ProfileChartCls.cs" />
+    <Compile Include="Module\Server.cs" />
+    <Compile Include="Module\StackOutput.cs" />
+    <Compile Include="Module\TimeChartCls.cs" />
+    <Compile Include="Module\TrayTransfer.cs" />
+    <Compile Include="Module\TrayTransferCycle.cs" />
+    <Compile Include="Module\TrayTransferTwo.cs" />
+    <Compile Include="Module\ZoneChartCls.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunThread\Chamber1.cs" />
+    <Compile Include="RunThread\Chamber2.cs" />
+    <Compile Include="RunThread\Global.cs" />
+    <Compile Include="RunThread\MagazineOutput1.cs" />
+    <Compile Include="RunThread\MainFrame.cs" />
+    <Compile Include="RunThread\OffLine.cs" />
+    <Compile Include="RunThread\Oven1.cs" />
+    <Compile Include="RunThread\OvenInput1.cs" />
+    <Compile Include="RunThread\OvenInputTrack1.cs" />
+    <Compile Include="RunThread\OvenOutput1.cs" />
+    <Compile Include="RunThread\OvenOutputTrack1.cs" />
+    <Compile Include="RunThread\SignalTower.cs" />
+    <Compile Include="RunThread\SolderBoardFD.cs" />
+    <Compile Include="RunThread\SolderBoardFU.cs" />
+    <Compile Include="RunThread\SolderBoardRD.cs" />
+    <Compile Include="RunThread\SolderBoardRU.cs" />
+    <Compile Include="RunThread\StackOutput1.cs" />
+    <Compile Include="RunThread\TrayTransferCycleDown.cs" />
+    <Compile Include="RunThread\TrayTransferCycleUp.cs" />
+    <Compile Include="UserInterface\frmBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmBaseDialog.designer.cs">
+      <DependentUpon>frmBaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmChamber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmChamber.designer.cs">
+      <DependentUpon>frmChamber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmCycleStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmCycleStop.designer.cs">
+      <DependentUpon>frmCycleStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmFnSetFileOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmFnSetFileOpen.designer.cs">
+      <DependentUpon>frmFnSetFileOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmHistoryRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmHistoryRecord.designer.cs">
+      <DependentUpon>frmHistoryRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmInfoVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmInfoVersion.designer.cs">
+      <DependentUpon>frmInfoVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmIODiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmIODiagnosis.designer.cs">
+      <DependentUpon>frmIODiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmMachineModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmMachineModule.designer.cs">
+      <DependentUpon>frmMachineModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmMagazineOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmMagazineOutput.designer.cs">
+      <DependentUpon>frmMagazineOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmMagazinePusher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmMagazinePusher.designer.cs">
+      <DependentUpon>frmMagazinePusher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmModuleStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmModuleStatus.designer.cs">
+      <DependentUpon>frmModuleStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmMotorDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmMotorDiagnosis.designer.cs">
+      <DependentUpon>frmMotorDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOven.designer.cs">
+      <DependentUpon>frmOven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenInput.designer.cs">
+      <DependentUpon>frmOvenInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenInputTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenInputTrack.designer.cs">
+      <DependentUpon>frmOvenInputTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenMap.designer.cs">
+      <DependentUpon>frmOvenMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenOutput.designer.cs">
+      <DependentUpon>frmOvenOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenOutputTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenOutputTrack.designer.cs">
+      <DependentUpon>frmOvenOutputTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenTemperature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmOvenTemperature.designer.cs">
+      <DependentUpon>frmOvenTemperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmProduct.designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmProfile.designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmRunParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmRunParameter.designer.cs">
+      <DependentUpon>frmRunParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupDiagnose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupDiagnose.designer.cs">
+      <DependentUpon>frmSetupDiagnose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupMagazine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupMagazine.designer.cs">
+      <DependentUpon>frmSetupMagazine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupMonitor.designer.cs">
+      <DependentUpon>frmSetupMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOven.designer.cs">
+      <DependentUpon>frmSetupOven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOvenInputTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOvenInputTrack.designer.cs">
+      <DependentUpon>frmSetupOvenInputTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOvenOutputTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupOvenOutputTrack.designer.cs">
+      <DependentUpon>frmSetupOvenOutputTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupProduct.designer.cs">
+      <DependentUpon>frmSetupProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupSetting.designer.cs">
+      <DependentUpon>frmSetupSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmSetupSystem.designer.cs">
+      <DependentUpon>frmSetupSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmStackOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmStackOutput.designer.cs">
+      <DependentUpon>frmStackOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmTrayTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmTrayTransfer.designer.cs">
+      <DependentUpon>frmTrayTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmTrayTransfer2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmTrayTransfer2.designer.cs">
+      <DependentUpon>frmTrayTransfer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\frmUser.designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserInterface\frmBaseDialog.resx">
+      <DependentUpon>frmBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmChamber.resx">
+      <DependentUpon>frmChamber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmCycleStop.resx">
+      <DependentUpon>frmCycleStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmFnSetFileOpen.resx">
+      <DependentUpon>frmFnSetFileOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmHistoryRecord.resx">
+      <DependentUpon>frmHistoryRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmInfoVersion.resx">
+      <DependentUpon>frmInfoVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmIODiagnosis.resx">
+      <DependentUpon>frmIODiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmMachineModule.resx">
+      <DependentUpon>frmMachineModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmMagazineOutput.resx">
+      <DependentUpon>frmMagazineOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmMagazinePusher.resx">
+      <DependentUpon>frmMagazinePusher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmModuleStatus.resx">
+      <DependentUpon>frmModuleStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmMotorDiagnosis.resx">
+      <DependentUpon>frmMotorDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOven.resx">
+      <DependentUpon>frmOven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenInput.resx">
+      <DependentUpon>frmOvenInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenInputTrack.resx">
+      <DependentUpon>frmOvenInputTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenMap.resx">
+      <DependentUpon>frmOvenMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenOutput.resx">
+      <DependentUpon>frmOvenOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenOutputTrack.resx">
+      <DependentUpon>frmOvenOutputTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmOvenTemperature.resx">
+      <DependentUpon>frmOvenTemperature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmRunParameter.resx">
+      <DependentUpon>frmRunParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupDiagnose.resx">
+      <DependentUpon>frmSetupDiagnose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupMagazine.resx">
+      <DependentUpon>frmSetupMagazine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupMonitor.resx">
+      <DependentUpon>frmSetupMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupOven.resx">
+      <DependentUpon>frmSetupOven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupOvenInputTrack.resx">
+      <DependentUpon>frmSetupOvenInputTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupOvenOutputTrack.resx">
+      <DependentUpon>frmSetupOvenOutputTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupProduct.resx">
+      <DependentUpon>frmSetupProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupSetting.resx">
+      <DependentUpon>frmSetupSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmSetupSystem.resx">
+      <DependentUpon>frmSetupSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmStackOutput.resx">
+      <DependentUpon>frmStackOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmTrayTransfer.resx">
+      <DependentUpon>frmTrayTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmTrayTransfer2.resx">
+      <DependentUpon>frmTrayTransfer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="Resources\switch-on.png" />
+    <None Include="Resources\switch-off.png" />
+    <None Include="Resources\icons8-double-up-30.png" />
+    <None Include="Resources\icons8-double-right-30.png" />
+    <None Include="Resources\icons8-double-left-30.png" />
+    <None Include="Resources\icons8-double-down-30.png" />
+    <None Include="Resources\checkbox_full.png" />
+    <None Include="Resources\checkbox_empty.png" />
+    <None Include="Resources\check_on.png" />
+    <None Include="Resources\check_off.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
